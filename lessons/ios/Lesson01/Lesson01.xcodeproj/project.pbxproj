@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E5F032013EE365E001B28BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5F031F13EE365E001B28BB /* UIKit.framework */; };
+		3E5F032213EE365E001B28BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5F032113EE365E001B28BB /* Foundation.framework */; };
+		3E5F032413EE365E001B28BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5F032313EE365E001B28BB /* CoreGraphics.framework */; };
+		3E5F032613EE365E001B28BB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5F032513EE365E001B28BB /* QuartzCore.framework */; };
+		3E5F032813EE365E001B28BB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5F032713EE365E001B28BB /* OpenGLES.framework */; };
+		3E5F033113EE365E001B28BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F033013EE365E001B28BB /* main.m */; };
+		3E5F033413EE365E001B28BB /* Lesson01AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F033313EE365E001B28BB /* Lesson01AppDelegate.mm */; };
+		3E5F033913EE365E001B28BB /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 3E5F033813EE365E001B28BB /* Shader.fsh */; };
+		3E5F033B13EE365E001B28BB /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 3E5F033A13EE365E001B28BB /* Shader.vsh */; };
+		3E5F033E13EE365E001B28BB /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F033D13EE365E001B28BB /* EAGLView.mm */; };
+		3E5F035F13EE447F001B28BB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E5F036013EE447F001B28BB /* MainWindow.xib */; };
+		3EAD8C7D13F56B29007BE670 /* neheLogo57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAD8C7C13F56B29007BE670 /* neheLogo57.png */; };
+		3EAD8C8013F56B32007BE670 /* neheLogo114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAD8C7F13F56B32007BE670 /* neheLogo114.png */; };
+		3ED2222013EE8E1F00768571 /* Lesson.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3ED2221E13EE8E1F00768571 /* Lesson.mm */; };
+		3ED2222913EE991D00768571 /* Lesson01.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3ED2222713EE991D00768571 /* Lesson01.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3E5F031B13EE365E001B28BB /* Lesson01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson01.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E5F031F13EE365E001B28BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3E5F032113EE365E001B28BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3E5F032313EE365E001B28BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3E5F032513EE365E001B28BB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3E5F032713EE365E001B28BB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3E5F032B13EE365E001B28BB /* Lesson01-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lesson01-Info.plist"; sourceTree = "<group>"; };
+		3E5F032F13EE365E001B28BB /* Lesson01-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lesson01-Prefix.pch"; sourceTree = "<group>"; };
+		3E5F033013EE365E001B28BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3E5F033213EE365E001B28BB /* Lesson01AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lesson01AppDelegate.h; sourceTree = "<group>"; };
+		3E5F033313EE365E001B28BB /* Lesson01AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Lesson01AppDelegate.mm; sourceTree = "<group>"; };
+		3E5F033813EE365E001B28BB /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		3E5F033A13EE365E001B28BB /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		3E5F033C13EE365E001B28BB /* EAGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		3E5F033D13EE365E001B28BB /* EAGLView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
+		3E5F036013EE447F001B28BB /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		3EAD8C7C13F56B29007BE670 /* neheLogo57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = neheLogo57.png; path = ../neheLogo57.png; sourceTree = "<group>"; };
+		3EAD8C7F13F56B32007BE670 /* neheLogo114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = neheLogo114.png; path = ../neheLogo114.png; sourceTree = "<group>"; };
+		3ED2221E13EE8E1F00768571 /* Lesson.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Lesson.mm; sourceTree = "<group>"; };
+		3ED2221F13EE8E1F00768571 /* Lesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson.h; sourceTree = "<group>"; };
+		3ED2222713EE991D00768571 /* Lesson01.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Lesson01.mm; sourceTree = "<group>"; };
+		3ED2222813EE991D00768571 /* Lesson01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson01.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E5F031813EE365E001B28BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E5F032013EE365E001B28BB /* UIKit.framework in Frameworks */,
+				3E5F032213EE365E001B28BB /* Foundation.framework in Frameworks */,
+				3E5F032413EE365E001B28BB /* CoreGraphics.framework in Frameworks */,
+				3E5F032613EE365E001B28BB /* QuartzCore.framework in Frameworks */,
+				3E5F032813EE365E001B28BB /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E5F031013EE365E001B28BB = {
+			isa = PBXGroup;
+			children = (
+				3E5F032913EE365E001B28BB /* Lesson01 */,
+				3E5F031E13EE365E001B28BB /* Frameworks */,
+				3E5F031C13EE365E001B28BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3E5F031C13EE365E001B28BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F031B13EE365E001B28BB /* Lesson01.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E5F031E13EE365E001B28BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F031F13EE365E001B28BB /* UIKit.framework */,
+				3E5F032113EE365E001B28BB /* Foundation.framework */,
+				3E5F032313EE365E001B28BB /* CoreGraphics.framework */,
+				3E5F032513EE365E001B28BB /* QuartzCore.framework */,
+				3E5F032713EE365E001B28BB /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E5F032913EE365E001B28BB /* Lesson01 */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F032A13EE365E001B28BB /* Supporting Files */,
+				3ED2222A13EE9A7F00768571 /* Shader */,
+				3ED2221C13EE8DD000768571 /* Basecode */,
+				3E5F033213EE365E001B28BB /* Lesson01AppDelegate.h */,
+				3E5F033313EE365E001B28BB /* Lesson01AppDelegate.mm */,
+				3ED2222713EE991D00768571 /* Lesson01.mm */,
+				3ED2222813EE991D00768571 /* Lesson01.h */,
+			);
+			path = Lesson01;
+			sourceTree = "<group>";
+		};
+		3E5F032A13EE365E001B28BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EAD8C7F13F56B32007BE670 /* neheLogo114.png */,
+				3EAD8C7C13F56B29007BE670 /* neheLogo57.png */,
+				3E5F032B13EE365E001B28BB /* Lesson01-Info.plist */,
+				3E5F036013EE447F001B28BB /* MainWindow.xib */,
+				3E5F032F13EE365E001B28BB /* Lesson01-Prefix.pch */,
+				3E5F033013EE365E001B28BB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3ED2221C13EE8DD000768571 /* Basecode */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F033C13EE365E001B28BB /* EAGLView.h */,
+				3E5F033D13EE365E001B28BB /* EAGLView.mm */,
+				3ED2221E13EE8E1F00768571 /* Lesson.mm */,
+				3ED2221F13EE8E1F00768571 /* Lesson.h */,
+			);
+			name = Basecode;
+			sourceTree = "<group>";
+		};
+		3ED2222A13EE9A7F00768571 /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F033813EE365E001B28BB /* Shader.fsh */,
+				3E5F033A13EE365E001B28BB /* Shader.vsh */,
+			);
+			name = Shader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E5F031A13EE365E001B28BB /* Lesson01 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E5F034713EE365E001B28BB /* Build configuration list for PBXNativeTarget "Lesson01" */;
+			buildPhases = (
+				3E5F031713EE365E001B28BB /* Sources */,
+				3E5F031813EE365E001B28BB /* Frameworks */,
+				3E5F031913EE365E001B28BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lesson01;
+			productName = Lesson01;
+			productReference = 3E5F031B13EE365E001B28BB /* Lesson01.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E5F031213EE365E001B28BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Daemgen.net;
+			};
+			buildConfigurationList = 3E5F031513EE365E001B28BB /* Build configuration list for PBXProject "Lesson01" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3E5F031013EE365E001B28BB;
+			productRefGroup = 3E5F031C13EE365E001B28BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3E5F031A13EE365E001B28BB /* Lesson01 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E5F031913EE365E001B28BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E5F035F13EE447F001B28BB /* MainWindow.xib in Resources */,
+				3E5F033913EE365E001B28BB /* Shader.fsh in Resources */,
+				3E5F033B13EE365E001B28BB /* Shader.vsh in Resources */,
+				3EAD8C7D13F56B29007BE670 /* neheLogo57.png in Resources */,
+				3EAD8C8013F56B32007BE670 /* neheLogo114.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E5F031713EE365E001B28BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E5F033113EE365E001B28BB /* main.m in Sources */,
+				3E5F033413EE365E001B28BB /* Lesson01AppDelegate.mm in Sources */,
+				3E5F033E13EE365E001B28BB /* EAGLView.mm in Sources */,
+				3ED2222013EE8E1F00768571 /* Lesson.mm in Sources */,
+				3ED2222913EE991D00768571 /* Lesson01.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3E5F034513EE365E001B28BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3E5F034613EE365E001B28BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		3E5F034813EE365E001B28BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lesson01/Lesson01-Prefix.pch";
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "Lesson01/Lesson01-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3E5F034913EE365E001B28BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lesson01/Lesson01-Prefix.pch";
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "Lesson01/Lesson01-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E5F031513EE365E001B28BB /* Build configuration list for PBXProject "Lesson01" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E5F034513EE365E001B28BB /* Debug */,
+				3E5F034613EE365E001B28BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E5F034713EE365E001B28BB /* Build configuration list for PBXNativeTarget "Lesson01" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E5F034813EE365E001B28BB /* Debug */,
+				3E5F034913EE365E001B28BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E5F031213EE365E001B28BB /* Project object */;
+}
