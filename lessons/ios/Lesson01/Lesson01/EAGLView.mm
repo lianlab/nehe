@@ -1,9 +1,24 @@
-//
-//  EAGLView.m
-//
-//  Created by Carsten Haubold on 7/08/11.
-//  Copyright 2011 NeHe Productions. All rights reserved.
-//
+/*
+ Copyright (C) 2011 by Carsten Haubold
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+ */
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -37,18 +52,20 @@
     self = [super initWithCoder:coder];
     
     //now we create the core animation EAGL layer
-	if (self) {
-        CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
-        
-        //we don't want a transparent surface
-        eaglLayer.opaque = TRUE;
-        
-        //here we configure the properties of our canvas, most important is the color depth RGBA8 !
-        eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
-                                        [NSNumber numberWithBool:FALSE], kEAGLDrawablePropertyRetainedBacking,
-                                        kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat,
-                                        nil];
+	if (!self) {
+        return nil;
     }
+
+    CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
+    
+    //we don't want a transparent surface
+    eaglLayer.opaque = TRUE;
+    
+    //here we configure the properties of our canvas, most important is the color depth RGBA8 !
+    eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [NSNumber numberWithBool:FALSE], kEAGLDrawablePropertyRetainedBacking,
+                                    kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat,
+                                    nil];
     
     //create an OpenGL ES 2 context
     context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
@@ -74,31 +91,6 @@
     
     
     return self;
-}
-
-//cleanup our view
-- (void)dealloc
-{
-    [self deleteFramebuffer];    
-    [context release];
-    [super dealloc];
-}
-
-//if we explicitly set a new context, we have to release the old one and delete the old framebuffers
-- (void)setContext:(EAGLContext *)newContext
-{
-    //only do something if we set a context different from the current one
-    if (context != newContext) {
-        //delete the framebuffers
-        [self deleteFramebuffer];
-        
-        //release the old context and store a pointer to the new one (retain for reference counting)
-        [context release];
-        context = [newContext retain];
-        
-        //make the new context the current one
-        [EAGLContext setCurrentContext:context];
-    }
 }
 
 //on iOS, all rendering goes into a renderbuffer,
@@ -128,6 +120,12 @@
     
     //attach this color buffer to our framebuffer
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, colorRenderbuffer);
+    
+    //our lesson needs to know the size of the renderbuffer so it can work with the right aspect ratio
+    if(lesson != NULL)
+    {
+        lesson->setRenderbufferSize(framebufferWidth, framebufferHeight);
+    }
     
     if(useDepthBuffer)
     {
@@ -187,8 +185,6 @@
 
         glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebuffer);
         
-        glViewport(0, 0, framebufferWidth, framebufferHeight);
-        
         //we need a lesson to be able to render something
         if(lesson != nil)
         {
@@ -210,14 +206,6 @@
     }
     else
         NSLog(@"Context not set!");
-}
-
-//As soon as the view is resized or new subviews are added, this method is called,
-//apparently the framebuffers are invalid in this case so we delete them
-//and have them recreated the next time we set them
-- (void)layoutSubviews
-{
-    [self deleteFramebuffer];
 }
 
 //our render loop just tells the iOS device that we want to keep refreshing our view all the time
@@ -259,5 +247,23 @@
     //if we set a new lesson, it is not yet initialized!
     lessonIsInitialized = FALSE;
 }
+
+//As soon as the view is resized or new subviews are added, this method is called,
+//apparently the framebuffers are invalid in this case so we delete them
+//and have them recreated the next time we draw to them
+- (void)layoutSubviews
+{
+    [self deleteFramebuffer];
+}
+
+//cleanup our view
+- (void)dealloc
+{
+    [self deleteFramebuffer];    
+    [context release];
+    [super dealloc];
+}
+
+
 
 @end

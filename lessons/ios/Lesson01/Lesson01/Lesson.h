@@ -1,15 +1,30 @@
-//
-//  Lesson.h
-//
-//  Created by Carsten Haubold on 7/08/11.
-//  Copyright 2011 NeHe Productions. All rights reserved.
-//
+/*
+ Copyright (C) 2011 by Carsten Haubold
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+ */
 
 #ifndef _LESSON_H_
 #define _LESSON_H_
 
-#import <OpenGLES/ES2/gl.h>
-#import <OpenGLES/ES2/glext.h>
+#include <OpenGLES/ES2/gl.h>
+#include <OpenGLES/ES2/glext.h>
 
 //this is our general lesson class, providing the two most important methods init and draw
 //which will be invoked by our EAGLView
@@ -18,7 +33,7 @@ class Lesson
 public:
     //constructor
     Lesson();
-    //the destructor has always to virtual!
+    //the destructor has always to be virtual!
     virtual ~Lesson();
     
     //abstract methods init and draw have to be defined in derived classes
