@@ -39,7 +39,7 @@ public:
     
 private:
     //our vertex buffer containing the geometry data for our triangle
-    unsigned int m_vertexBuffer;
+    unsigned int m_geometryBuffer;
     
     //buffer ID for the color data in the video memory
     unsigned int m_colorBuffer;

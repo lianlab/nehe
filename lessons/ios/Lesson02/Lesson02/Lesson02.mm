@@ -29,7 +29,7 @@
 
 //lesson constructor
 Lesson02::Lesson02()
-: m_vertexBuffer(0),
+: m_geometryBuffer(0),
   m_colorBuffer(0),
   m_shader(NULL)
 {
@@ -50,20 +50,22 @@ void Lesson02::init()
     //set the color we use for clearing our colorRenderbuffer to black
     glClearColor(0.0, 0.0, 0.0, 1.0);
     
+    glEnable(GL_CULL_FACE);
+    
     //---------------------------------------------------
     //create a triangle
     std::vector<float> geometryData;
     
     //4 floats define one vertex (x, y, z and w), first one is lower left
     geometryData.push_back(-0.5); geometryData.push_back(-0.5); geometryData.push_back(0.0); geometryData.push_back(1.0);
-    //we go counter clockwise, so top vertex next
-    geometryData.push_back( 0.0); geometryData.push_back( 0.5); geometryData.push_back(0.0); geometryData.push_back(1.0);
-    //lower right vertex is last
+    //we go counter clockwise, so lower right vertex next
     geometryData.push_back( 0.5); geometryData.push_back(-0.5); geometryData.push_back(0.0); geometryData.push_back(1.0);
+    //top vertex is last
+    geometryData.push_back( 0.0); geometryData.push_back( 0.5); geometryData.push_back(0.0); geometryData.push_back(1.0);
     
     //generate an ID for our geometry buffer in the video memory and make it the active one
-    glGenBuffers(1, &m_vertexBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, m_vertexBuffer);
+    glGenBuffers(1, &m_geometryBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, m_geometryBuffer);
     
     //send the data to the video memory
     glBufferData(GL_ARRAY_BUFFER, geometryData.size() * sizeof(float), &geometryData[0], GL_STATIC_DRAW);
@@ -77,9 +79,9 @@ void Lesson02::init()
     
     //first vertex is red
     colorData.push_back(1.0); colorData.push_back(0.0); colorData.push_back(0.0);
-    //top vertex is green
+    //lower right vertex is green
     colorData.push_back(0.0); colorData.push_back(1.0); colorData.push_back(0.0);
-    //lower right vertex is blue
+    //top vertex is blue
     colorData.push_back(0.0); colorData.push_back(0.0); colorData.push_back(1.0);
     
     //generate an ID for the color buffer in the video memory and make it the active one
@@ -105,6 +107,12 @@ void Lesson02::init()
     m_positionLocation = glGetAttribLocation(m_shader->getProgram(), "position");
     m_colorLocation = glGetAttribLocation(m_shader->getProgram(), "color");
     
+    //check that the locations are valid, negative value means invalid
+    if(m_positionLocation < 0 || m_colorLocation < 0)
+    {
+        NSLog(@"Could not query attribute locations");
+    }
+    
     //enable these attributes
     glEnableVertexAttribArray(m_positionLocation);
     glEnableVertexAttribArray(m_colorLocation);
@@ -115,12 +123,11 @@ void Lesson02::init()
 //drawing a frame
 void Lesson02::draw()
 {
-    NSLog(@"Drawing");
     //clear the color buffer
     glClear(GL_COLOR_BUFFER_BIT);
     
     //bind the geometry VBO
-    glBindBuffer(GL_ARRAY_BUFFER, m_vertexBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, m_geometryBuffer);
     //point the position attribute to this buffer, being tuples of 4 floats for each vertex
     glVertexAttribPointer(m_positionLocation, 4, GL_FLOAT, GL_FALSE, 0, NULL);
     
@@ -131,6 +138,4 @@ void Lesson02::draw()
     
     //initiate the drawing process, we want a triangle, start at index 0 and draw 3 vertices
     glDrawArrays(GL_TRIANGLES, 0, 3);
-    
-    NSLog(@"Drawing done...");
 }
