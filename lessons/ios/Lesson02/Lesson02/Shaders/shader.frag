@@ -20,35 +20,13 @@
  THE SOFTWARE.
  */
 
-#ifndef _LESSON02_H_
-#define _LESSON02_H_
+//incoming values from the vertex shader stage.
+//if the vertices of a primitive have different values, they are interpolated!
+varying lowp vec3 colorVarying;
 
-#include "Lesson.h"
-#include "Shader.h"
-
-//We derive our current lesson class from the general lesson class
-class Lesson02 : public Lesson
+void main()
 {
-public:
-    //overwrite all important methods
-    Lesson02();
-    virtual ~Lesson02();
-    
-    virtual void init();
-    virtual void draw();
-    
-private:
-    //our vertex buffer containing the geometry data for our triangle
-    unsigned int m_vertexBuffer;
-    
-    //buffer ID for the color data in the video memory
-    unsigned int m_colorBuffer;
-    
-    //the shader program we use for rendering
-    Shader *m_shader;
-    
-    //locations for the vertex and color attribute in the shader
-    int m_positionLocation, m_colorLocation;
-};
-
-#endif
+    //create a vec4 from the vec3 by padding a 1.0 for alpha
+    //and assign that color to be this fragment's color
+    gl_FragColor = vec4(colorVarying, 1.0);
+}

@@ -20,35 +20,20 @@
  THE SOFTWARE.
  */
 
-#ifndef _LESSON02_H_
-#define _LESSON02_H_
+//the incoming vertex' position
+attribute vec4 position;
 
-#include "Lesson.h"
-#include "Shader.h"
+//and its color
+attribute vec3 color;
 
-//We derive our current lesson class from the general lesson class
-class Lesson02 : public Lesson
-{
-public:
-    //overwrite all important methods
-    Lesson02();
-    virtual ~Lesson02();
-    
-    virtual void init();
-    virtual void draw();
-    
-private:
-    //our vertex buffer containing the geometry data for our triangle
-    unsigned int m_vertexBuffer;
-    
-    //buffer ID for the color data in the video memory
-    unsigned int m_colorBuffer;
-    
-    //the shader program we use for rendering
-    Shader *m_shader;
-    
-    //locations for the vertex and color attribute in the shader
-    int m_positionLocation, m_colorLocation;
-};
+//the varying statement tells the shader pipeline that this variable
+//has to be passed on to the next stage (so the fragment shader)
+varying lowp vec3 colorVarying;
 
-#endif
+
+//the shader entry point is the main method
+void main()
+{    
+    colorVarying = color; //save the color for the fragment shader
+    gl_Position = position; //copy the position
+}
